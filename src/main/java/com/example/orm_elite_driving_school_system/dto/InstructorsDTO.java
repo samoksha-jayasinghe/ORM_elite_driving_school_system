@@ -22,4 +22,6 @@ public class InstructorsDTO {
     private ArrayList<LessonsDTO> lessons = new  ArrayList<>();
     @Builder.Default
     private ArrayList<CourseDTO> courses = new ArrayList<>();
+
 }
+
