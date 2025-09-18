@@ -1,7 +1,7 @@
 package com.example.orm_elite_driving_school_system.dao.custom;
 
-import lk.ijse.elitedrivingschoolsystemormcoursework.dao.CrudDAO;
-import lk.ijse.elitedrivingschoolsystemormcoursework.entity.Course;
+import com.example.orm_elite_driving_school_system.dao.CrudDAO;
+import com.example.orm_elite_driving_school_system.entity.Course;
 
 public interface CourseDAO extends CrudDAO<Course> {
 }
