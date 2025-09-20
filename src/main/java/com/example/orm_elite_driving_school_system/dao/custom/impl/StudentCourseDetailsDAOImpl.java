@@ -1,8 +1,8 @@
 package com.example.orm_elite_driving_school_system.dao.custom.impl;
 
 import com.example.orm_elite_driving_school_system.config.FactoryConfiguration;
-import com.example.orm_elite_driving_school_system.dao.custom.CourseDAO;
-import com.example.orm_elite_driving_school_system.entity.Course;
+import com.example.orm_elite_driving_school_system.dao.custom.StudentCourseDetailsDAO;
+import com.example.orm_elite_driving_school_system.entity.StudentCourseDetails;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -10,43 +10,43 @@ import org.hibernate.query.Query;
 import java.util.List;
 import java.util.Optional;
 
-public class CourseDAOImpl implements CourseDAO {
-    private final FactoryConfiguration factoryConfiguration = FactoryConfiguration.getInstance();
+public class StudentCourseDetailsDAOImpl implements StudentCourseDetailsDAO {
+        private final FactoryConfiguration factoryConfiguration = FactoryConfiguration.getInstance();
 
-    @Override
-    public List<Course> getAll() throws Exception {
+        @Override
+        public List<StudentCourseDetails> getAll() throws Exception {
         Session session = factoryConfiguration.getSession();
         try {
-            Query<Course> query = session.createQuery("from Course",Course.class);
-            List<Course> courseList = query.list();
-            return courseList;
+            Query<StudentCourseDetails> query = session.createQuery("from StudentCourseDetails ", StudentCourseDetails.class);
+            List<StudentCourseDetails> studentCourseDetailsList = query.list();
+            return studentCourseDetailsList;
         }finally {
             session.close();
         }
     }
 
-    @Override
-    public String getLastId() throws Exception {
+        @Override
+        public String getLastId() throws Exception {
         Session session = factoryConfiguration.getSession();
         try {
-            Query<String> query = session.createQuery("SELECT c.course_id FROM Course c ORDER BY c.course_id DESC", String.class)
+            Query<String> query = session.createQuery("SELECT scd.studentCourseId FROM StudentCourseDetails scd ORDER BY scd.studentCourseId DESC", String.class)
                     .setMaxResults(1);
-            List<String> courseIdList = query.list();
-            if (courseIdList.isEmpty()) {
+            List<String> studentCourseList = query.list();
+            if (studentCourseList.isEmpty()) {
                 return null;
             }
-            return courseIdList.getFirst();
+            return studentCourseList.getFirst();
         } finally {
             session.close();
         }
     }
 
-    @Override
-    public boolean save(Course course) throws Exception {
+        @Override
+        public boolean save(StudentCourseDetails studentCourseDetails) throws Exception {
         Session session = factoryConfiguration.getSession();
         Transaction transaction = session.beginTransaction();
         try {
-            session.persist(course);
+            session.persist(studentCourseDetails);
             transaction.commit();
             return true;
         }catch (Exception e){
@@ -57,12 +57,12 @@ public class CourseDAOImpl implements CourseDAO {
         }
     }
 
-    @Override
-    public boolean update(Course course) throws Exception {
+        @Override
+        public boolean update(StudentCourseDetails studentCourseDetails) throws Exception {
         Session session = factoryConfiguration.getSession();
         Transaction transaction = session.beginTransaction();
         try {
-            session.merge(course);
+            session.merge(studentCourseDetails);
             transaction.commit();
             return true;
         }catch (Exception e){
@@ -73,14 +73,14 @@ public class CourseDAOImpl implements CourseDAO {
         }
     }
 
-    @Override
-    public boolean delete(String id) throws Exception {
+        @Override
+        public boolean delete(String id) throws Exception {
         Session session = factoryConfiguration.getSession();
         Transaction transaction = session.beginTransaction();
         try {
-            Course course = (Course) session.get(Course.class, id);
-            if (course != null) {
-                session.remove(course);
+            StudentCourseDetails studentCourseDetails = (StudentCourseDetails) session.get(StudentCourseDetails.class, id);
+            if (studentCourseDetails != null) {
+                session.remove(studentCourseDetails);
                 transaction.commit();
                 return true;
             }
@@ -96,30 +96,30 @@ public class CourseDAOImpl implements CourseDAO {
         }
     }
 
-    @Override
-    public List<String> getAllIds() throws Exception {
+        @Override
+        public List<String> getAllIds() throws Exception {
         Session session = factoryConfiguration.getSession();
         try {
-            Query<String> query = session.createQuery("SELECT c.course_id FROM Course c", String.class);
+            Query<String> query = session.createQuery("SELECT scd.studentCourseId FROM StudentCourseDetails scd", String.class);
             return query.list();
         } finally {
             session.close();
         }
     }
 
-    @Override
-    public Optional<Course> findById(String id) throws Exception {
+        @Override
+        public Optional<StudentCourseDetails> findById(String id) throws Exception {
         Session session = factoryConfiguration.getSession();
         try {
-            Course course = session.get(Course.class, id);
-            return Optional.ofNullable(course);
+            StudentCourseDetails studentCourseDetails = session.get(StudentCourseDetails.class, id);
+            return Optional.ofNullable(studentCourseDetails);
         } finally {
             session.close();
         }
     }
 
-    @Override
-    public String generateNewId() {
+        @Override
+        public String generateNewId() {
         String lastId = null;
         try {
             lastId = getLastId();
@@ -127,11 +127,11 @@ public class CourseDAOImpl implements CourseDAO {
             throw new RuntimeException(e);
         }
         if (lastId == null) {
-            return "C-001";
+            return "SCD-001";
         } else {
             int num = Integer.parseInt(lastId.split("-")[1]);
             num++;
-            return String.format("C-%03d", num);
+            return String.format("SCD-%03d", num);
         }
     }
 }

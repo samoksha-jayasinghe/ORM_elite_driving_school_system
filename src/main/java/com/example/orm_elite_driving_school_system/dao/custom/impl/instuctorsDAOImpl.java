@@ -3,7 +3,6 @@ package com.example.orm_elite_driving_school_system.dao.custom.impl;
 import com.example.orm_elite_driving_school_system.config.FactoryConfiguration;
 import com.example.orm_elite_driving_school_system.dao.custom.InstructorsDAO;
 import com.example.orm_elite_driving_school_system.entity.Instructors;
-import com.example.orm_elite_driving_school_system.entity.Lessons;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -15,7 +14,7 @@ public class instuctorsDAOImpl implements InstructorsDAO {
     private final FactoryConfiguration factoryConfiguration = FactoryConfiguration.getInstance();
 
     @Override
-    public List<Lessons> getAll() throws Exception {
+    public List<Instructors> getAll() throws Exception {
         Session session = factoryConfiguration.getSession();
         try {
             Query<Instructors> query = session.createQuery("from Instructors ",Instructors.class);
@@ -109,7 +108,7 @@ public class instuctorsDAOImpl implements InstructorsDAO {
     }
 
     @Override
-    public Optional<Lessons> findById(String id) throws Exception {
+    public Optional<Instructors> findById(String id) throws Exception {
         Session session = factoryConfiguration.getSession();
         try {
             Instructors instructors = session.get(Instructors.class, id);

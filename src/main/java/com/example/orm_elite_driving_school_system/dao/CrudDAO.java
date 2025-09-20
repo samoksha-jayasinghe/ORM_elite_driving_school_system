@@ -1,13 +1,11 @@
 package com.example.orm_elite_driving_school_system.dao;
 
-import com.example.orm_elite_driving_school_system.entity.Lessons;
-
 import java.util.List;
 import java.util.Optional;
 
 public interface CrudDAO<T> extends SuperDAO {
 
-    List<Lessons> getAll() throws Exception;
+    List<T> getAll() throws Exception;
 
     String getLastId() throws Exception;
 
@@ -19,7 +17,7 @@ public interface CrudDAO<T> extends SuperDAO {
 
     List<String> getAllIds() throws Exception;
 
-    Optional<Lessons> findById(String id) throws Exception;
+    Optional<T> findById(String id) throws Exception;
 
     String generateNewId();
 }
