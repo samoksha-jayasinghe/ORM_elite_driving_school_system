@@ -1,6 +1,6 @@
 package com.example.orm_elite_driving_school_system.dao;
 
-import lk.ijse.elitedrivingschoolsystemormcoursework.db.DBConnection;
+import com.example.orm_elite_driving_school_system.db.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
