@@ -9,7 +9,7 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="lk.drivinglearners.controller.DashboardController"
-            stylesheets="@style.css">
+            stylesheets="@../styles/style.css">
 
     <left>
         <VBox spacing="15" styleClass="sidebar">

@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("images/360_F_530283750_h5gOO5AGApGzUdXx9IAW8slYaQvDTXPU.jpg");   /* path inside resources */
+    -fx-background-image: url("../images/360_F_530283750_h5gOO5AGApGzUdXx9IAW8slYaQvDTXPU.jpg");   /* path inside resources */
     -fx-background-repeat: no-repeat;
     -fx-background-size: cover;   /* cover = stretch to fill */
     -fx-background-position: center center;
