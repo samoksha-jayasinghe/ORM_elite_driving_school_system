@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.orm_elite_driving_school_system.controller.StudentManagement">
+
+    <children>
+        <Label text="Student Management" layoutX="20" layoutY="20" style="-fx-font-size: 20px;"/>
+
+        <TextField fx:id="txtId" promptText="Student ID" layoutX="20" layoutY="60"/>
+        <TextField fx:id="txtName" promptText="Name" layoutX="20" layoutY="100"/>
+        <TextField fx:id="txtAge" promptText="Age" layoutX="20" layoutY="140"/>
+        <TextField fx:id="txtNic" promptText="NIC" layoutX="20" layoutY="180"/>
+        <TextField fx:id="txtContact" promptText="Contact" layoutX="20" layoutY="220"/>
+
+        <Button text="Save" onAction="#btnSaveOnAction" layoutX="20" layoutY="260"/>
+        <Button text="Update" onAction="#btnUpdateOnAction" layoutX="90" layoutY="260"/>
+        <Button text="Delete" onAction="#btnDeleteOnAction" layoutX="170" layoutY="260"/>
+
+        <TableView fx:id="tblStudents" layoutX="300" layoutY="60" prefWidth="400" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="colName" text="Name" prefWidth="120"/>
+                <TableColumn fx:id="colAge" text="Age" prefWidth="60"/>
+                <TableColumn fx:id="colNic" text="NIC" prefWidth="120"/>
+                <TableColumn fx:id="colContact" text="Contact" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
+

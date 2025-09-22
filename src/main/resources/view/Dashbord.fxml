@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="lk.drivinglearners.controller.DashboardController"
+            stylesheets="@style.css">
+
+    <left>
+        <VBox spacing="15" styleClass="sidebar">
+            <children>
+                <Button text="Students" onAction="#btnStudentOnAction" styleClass="nav-btn"/>
+                <Button text="Vehicles" onAction="#btnVehicleOnAction" styleClass="nav-btn"/>
+                <Button text="Classes" onAction="#btnClassOnAction" styleClass="nav-btn"/>
+                <Button text="Payments" onAction="#btnPaymentOnAction" styleClass="nav-btn"/>
+                <Button text="Logout" onAction="#btnLogoutOnAction" styleClass="danger-btn"/>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <AnchorPane fx:id="contentPane"/>
+    </center>
+</BorderPane>
+

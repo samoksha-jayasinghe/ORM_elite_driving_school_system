@@ -1,0 +1,80 @@
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #F9FAFB;
+}
+
+/* Titles & Headers */
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563EB;
+}
+
+.header-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2937;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #2563EB;
+    -fx-padding: 20;
+    -fx-pref-width: 150;
+}
+
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.nav-btn:hover {
+    -fx-background-color: #1E40AF;
+}
+
+/* Buttons */
+.primary-btn {
+    -fx-background-color: #2563EB;
+    -fx-text-fill: white;
+    -fx-padding: 8 16;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.primary-btn:hover {
+    -fx-background-color: #1E40AF;
+}
+
+.secondary-btn {
+    -fx-background-color: #10B981;
+    -fx-text-fill: white;
+    -fx-padding: 8 16;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.secondary-btn:hover {
+    -fx-background-color: #059669;
+}
+
+.danger-btn {
+    -fx-background-color: #DC2626;
+    -fx-text-fill: white;
+    -fx-padding: 8 16;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.danger-btn:hover {
+    -fx-background-color: #B91C1C;
+}
+
+/* Inputs */
+.input-field {
+    -fx-padding: 6;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #D1D5DB;
+    -fx-pref-width: 200;
+}
+.input-field:focused {
+    -fx-border-color: #2563EB;
+}
