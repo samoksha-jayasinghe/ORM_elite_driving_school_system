@@ -1,9 +1,9 @@
 package com.example.orm_elite_driving_school_system.bo.custom.impl;
 
 import com.example.orm_elite_driving_school_system.bo.custom.CourseBO;
-import com.example.orm_elite_driving_school_system.bo.exception.DuplicateException;
-import com.example.orm_elite_driving_school_system.bo.exception.NotFoundException;
-import com.example.orm_elite_driving_school_system.bo.util.EntityDTOConverter;
+import com.example.orm_elite_driving_school_system.bo.custom.exception.DuplicateException;
+import com.example.orm_elite_driving_school_system.bo.custom.exception.NotFoundException;
+import com.example.orm_elite_driving_school_system.bo.custom.util.EntityDTOConverter;
 import com.example.orm_elite_driving_school_system.dao.DAOFactory;
 import com.example.orm_elite_driving_school_system.dao.DAOTypes;
 import com.example.orm_elite_driving_school_system.dao.custom.CourseDAO;

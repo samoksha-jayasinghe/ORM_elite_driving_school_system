@@ -1,9 +1,15 @@
 module com.example.orm_elite_driving_school_system {    requires javafx.controls;
+    requires javafx.controls;
     requires javafx.fxml;
     requires org.hibernate.orm.core;
     requires static lombok;
     requires java.sql;
     requires jakarta.persistence;
+    requires java.desktop;
+    requires javafx.graphics;
+    requires jbcrypt;
+    requires java.naming;
+    requires javafx.base;
 
 
 

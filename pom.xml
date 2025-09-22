@@ -34,6 +34,11 @@
             <version>3.1.0</version>
         </dependency>
         <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>21</version>
@@ -100,7 +105,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                lk.ijse.elitedrivingschoolsystemormcoursework/lk.ijse.elitedrivingschoolsystemormcoursework.HelloApplication
+                                com.example.orm_elite_driving_school_system/com.example.orm_elite_driving_school_system.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
