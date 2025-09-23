@@ -13,9 +13,9 @@ import java.util.Date;
 
 public class PaymentsDTO {
     private String paymentId;
-    private String studentId;
     private Date paymentDate;
     private double amount;
     private String paymentMethod;
     private String status;
+    private String studentId;
 }

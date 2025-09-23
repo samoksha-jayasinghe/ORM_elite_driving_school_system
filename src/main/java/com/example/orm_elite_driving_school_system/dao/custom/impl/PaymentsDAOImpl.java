@@ -2,7 +2,6 @@ package com.example.orm_elite_driving_school_system.dao.custom.impl;
 
 import com.example.orm_elite_driving_school_system.config.FactoryConfiguration;
 import com.example.orm_elite_driving_school_system.dao.custom.PaymentDAO;
-import com.example.orm_elite_driving_school_system.entity.Lessons;
 import com.example.orm_elite_driving_school_system.entity.Payments;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -11,7 +10,7 @@ import org.hibernate.query.Query;
 import java.util.List;
 import java.util.Optional;
 
-public class PaymentDAOImpl implements PaymentDAO {
+public class PaymentsDAOImpl implements PaymentDAO {
     private final FactoryConfiguration factoryConfiguration = FactoryConfiguration.getInstance();
 
     @Override

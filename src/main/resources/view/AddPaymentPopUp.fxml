@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="406.0" style="-fx-background-radius: 20px; -fx-background-color: linear-gradient(to bottom right, #e0c3fc, #ffffff); -fx-border-color: #000; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm_elite_driving_school_system.controller.">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="406.0" style="-fx-background-radius: 20px; -fx-background-color: linear-gradient(to bottom right, #e0c3fc, #ffffff); -fx-border-color: #000; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm_elite_driving_school_system.controller.PaymentPopUpController">
     <children>
         <VBox layoutX="20.0" layoutY="65.0" prefHeight="419.0" prefWidth="360.0" style="-fx-background-color: linear-gradient(to bottom right, #e0c3fc, #ffffff); -fx-background-radius: 20px; -fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 20px;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
             <children>
