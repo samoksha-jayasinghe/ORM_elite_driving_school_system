@@ -117,6 +117,12 @@ public class EntityDTOConverter {
         dto.setAddress(students.getAddress());
         dto.setDob(students.getDob());
         dto.setRegistrationDate(students.getRegistrationDate());
+        dto.setCourses(
+                students.getCourses()
+                        .stream()
+                        .map(this::getCourseDTO) // convert entity → DTO
+                        .toList() // collect into List
+        );
         return dto;
     }
 

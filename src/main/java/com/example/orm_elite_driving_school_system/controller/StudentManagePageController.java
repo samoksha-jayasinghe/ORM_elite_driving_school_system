@@ -52,7 +52,7 @@ public class StudentManagePageController implements Initializable {
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colDOB.setCellValueFactory(new PropertyValueFactory<>("dob"));
         colRegDate.setCellValueFactory(new PropertyValueFactory<>("registrationDate"));
-        colEnrolledCourses.setCellValueFactory(new PropertyValueFactory<>("courses"));
+        colEnrolledCourses.setCellValueFactory(new PropertyValueFactory<>("courseId"));
 
         loadAllStudents();
     }
@@ -92,7 +92,7 @@ public class StudentManagePageController implements Initializable {
 
     public void btnAddOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfaces/view/AddStudentPopUp.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/AddStudentPopUp.fxml"));
             Parent parent = fxmlLoader.load();
 
             Stage stage = new Stage();
@@ -107,7 +107,7 @@ public class StudentManagePageController implements Initializable {
         }
     }
 
-    public void btnDeleteOnAAction(ActionEvent actionEvent) {
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
         Alert alert = new Alert(
                 Alert.AlertType.CONFIRMATION,
                 "Are you sure whether you want to delete this student?",
@@ -148,7 +148,7 @@ public class StudentManagePageController implements Initializable {
             }
 
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfaces/view/AddStudentPopUp.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/AddStudentPopUp.fxml"));
                 Parent parent = fxmlLoader.load();
 
                 StudentPopUpController controller = fxmlLoader.getController();
@@ -165,8 +165,5 @@ public class StudentManagePageController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Failed to open the popup!").show();
             }
         }
-    }
-
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
     }
 }

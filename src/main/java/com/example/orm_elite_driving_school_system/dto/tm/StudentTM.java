@@ -21,5 +21,5 @@ public class StudentTM extends ActionEvent {
     private String address;
     private Date dob;
     private Date registrationDate;
-    private String courses;
+    private String courseId;
 }

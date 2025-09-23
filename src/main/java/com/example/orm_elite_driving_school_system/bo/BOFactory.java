@@ -27,7 +27,8 @@ public class BOFactory {
                 return new StudentsBOImpl();
             case USER:
                 return new UserBOImpl();
-
+            case ENROLL:
+                return new EnrollBOImpl();
             default:
                 return null;
 

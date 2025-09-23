@@ -176,6 +176,7 @@ public class StudentPopUpController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Failed to update student", ButtonType.OK).show();
             }
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

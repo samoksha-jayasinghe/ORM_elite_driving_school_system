@@ -38,7 +38,7 @@ public class InstructorsManagePageController implements Initializable {
 
     public void btnAddOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfaces/view/AddInstructorsPopUp.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/AddInstructorsPopUp.fxml"));
             Parent parent = fxmlLoader.load();
 
             Stage stage = new Stage();
@@ -104,7 +104,6 @@ public class InstructorsManagePageController implements Initializable {
                 stage.setScene(new Scene(parent));
                 stage.initModality(Modality.APPLICATION_MODAL); // Block input to other windows
                 stage.showAndWait();
-
                 loadAllInstructors();
             } catch (IOException e) {
                 new Alert(Alert.AlertType.ERROR, "Failed to open the popup!").show();

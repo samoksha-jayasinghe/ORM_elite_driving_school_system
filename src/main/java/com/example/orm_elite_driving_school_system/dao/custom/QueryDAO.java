@@ -4,4 +4,5 @@ import com.example.orm_elite_driving_school_system.dao.SuperDAO;
 
 public interface QueryDAO extends SuperDAO {
     public int getStudentCountForLesson(String lessonId);
+    double getTotalCourseAmountByStudentId(String studentId) throws Exception;
 }

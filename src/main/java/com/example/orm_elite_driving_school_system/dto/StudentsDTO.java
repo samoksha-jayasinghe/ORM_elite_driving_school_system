@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,7 +24,7 @@ public class StudentsDTO {
     private Date dob;
     private Date registrationDate;
     @Builder.Default
-    private ArrayList<CourseDTO> courses = new ArrayList<>();
+    private List<CourseDTO> courses = new ArrayList<>();
     @Builder.Default
     private ArrayList<LessonsDTO> lessons =new ArrayList<>();
     @Builder.Default

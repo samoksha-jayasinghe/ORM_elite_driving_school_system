@@ -38,7 +38,7 @@ public class CourseManageController implements Initializable {
 
     public void btnAddOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfaces/view/AddCoursePopUp.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/AddCoursePopUp.fxml"));
             Parent parent = fxmlLoader.load();
 
             Stage stage = new Stage();

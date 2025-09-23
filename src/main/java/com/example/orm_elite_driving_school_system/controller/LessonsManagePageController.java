@@ -40,7 +40,7 @@ public class LessonsManagePageController implements Initializable {
 
     public void btnAddOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfaces/view/AddLessonsPopUp.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/AddLessonsPopUp.fxml"));
             Parent parent = fxmlLoader.load();
 
             Stage stage = new Stage();
