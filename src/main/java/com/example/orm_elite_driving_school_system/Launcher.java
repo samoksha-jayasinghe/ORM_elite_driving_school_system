@@ -12,7 +12,7 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/AddCoursePopUp.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/StudentManagePage2.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.setTitle("Elite Driving School System");
