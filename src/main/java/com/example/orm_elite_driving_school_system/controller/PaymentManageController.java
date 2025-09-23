@@ -53,20 +53,7 @@ public class PaymentManageController implements Initializable {
     }
 
     private void loadAllPayments() {
-        try {
-            tblPayment.setItems(FXCollections.observableArrayList(
-                    paymentsBO.getAllPayments().stream().map(dto -> new PaymentTM(
-                            dto.getPaymentId(),
-                            dto.getPaymentDate(),
-                            dto.getAmount(),
-                            dto.getPaymentMethod(),
-                            dto.getStatus(),
-                            dto.getStudentId()
-                    )).toList()
-            ));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
