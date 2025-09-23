@@ -22,7 +22,7 @@
 
 .table-view .label {
     -fx-text-fill: #7209b7;
-    -fx-font-size: 15px;
+    -fx-font-size: 12px;
     -fx-font-family: Poppins;
     -fx-alignment: CENTER_LEFT;
     -fx-label-padding: 0px 5px;
