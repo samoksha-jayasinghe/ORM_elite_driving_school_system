@@ -33,6 +33,7 @@ public class FactoryConfiguration {
                     .addAnnotatedClass(User.class);
             sessionFactory = configuration.buildSessionFactory();
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("Failed to initialize Hibernate SessionFactory", e);
         }
 

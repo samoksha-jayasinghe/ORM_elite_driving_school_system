@@ -18,13 +18,13 @@ public class Students {
 
     @Id
     @EqualsAndHashCode.Include
-    @Column(name = "student_id")
+    @Column
     private String studentId;
 
-    @Column(name = "first_name")
+    @Column
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column
     private String lastName;
 
     @Column(nullable = false, unique = true)
@@ -42,7 +42,7 @@ public class Students {
     @Column(nullable = false)
     private Date registrationDate;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),
