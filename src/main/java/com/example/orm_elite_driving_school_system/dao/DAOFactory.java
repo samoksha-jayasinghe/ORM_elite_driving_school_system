@@ -1,6 +1,6 @@
 package com.example.orm_elite_driving_school_system.dao;
 
-import lk.ijse.elitedrivingschoolsystemormcoursework.dao.custom.impl.*;
+import com.example.orm_elite_driving_school_system.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -15,15 +15,13 @@ public class DAOFactory {
             case COURSE :
                 return new CourseDAOImpl();
             case INSTRUCTORS:
-                return new InstructorsDAOImpl();
+                return new InstuctorsDAOImpl();
             case LESSONS:
                 return new LessonsDAOImpl();
             case PAYMENTS:
-                return new PaymentsDAOImpl();
+                return new PaymentDAOImpl();
             case QUERY:
                 return new QueryDAOImpl();
-            case STUDENT_COURSE_DETAILS:
-                return new StudentCourseDetailsDAOImpl();
             case STUDENTS:
                 return new StudentsDAOImpl();
             case USER:

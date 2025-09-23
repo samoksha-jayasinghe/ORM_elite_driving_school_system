@@ -10,7 +10,7 @@ import org.hibernate.query.Query;
 import java.util.List;
 import java.util.Optional;
 
-public class instuctorsDAOImpl implements InstructorsDAO {
+public class InstuctorsDAOImpl implements InstructorsDAO {
     private final FactoryConfiguration factoryConfiguration = FactoryConfiguration.getInstance();
 
     @Override

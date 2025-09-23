@@ -1,10 +1,7 @@
 package com.example.orm_elite_driving_school_system.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Time;
 import java.util.Date;
@@ -24,7 +21,7 @@ public class Lessons {
 
     @ManyToOne
     @JoinColumn(name = "studentId", referencedColumnName = "studentId")
-    private Students student;
+    private Students students;
 
     @ManyToOne
     @JoinColumn(name = "courseId", referencedColumnName = "course_id")
@@ -32,7 +29,7 @@ public class Lessons {
 
     @ManyToOne
     @JoinColumn(name = "instructorId", referencedColumnName = "instructor_id")
-    private Instructors instructor;
+    private Instructors instructors;
 
     @Column
     private Date lessonDate;
