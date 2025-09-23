@@ -19,4 +19,5 @@ module com.example.orm_elite_driving_school_system {    requires javafx.controls
     opens com.example.orm_elite_driving_school_system.controller to javafx.fxml;
     opens com.example.orm_elite_driving_school_system.dto.tm to javafx.base;
     exports com.example.orm_elite_driving_school_system;
+    opens com.example.orm_elite_driving_school_system.dto to javafx.base;
 }

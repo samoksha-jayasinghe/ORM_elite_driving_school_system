@@ -23,10 +23,11 @@ public class StudentsDTO {
     private Date dob;
     private Date registrationDate;
     @Builder.Default
-    private ArrayList<StudentCourseDetailsDTO> studentCourseDetails = new ArrayList<>();
+    private ArrayList<CourseDTO> courses = new ArrayList<>();
     @Builder.Default
     private ArrayList<LessonsDTO> lessons =new ArrayList<>();
     @Builder.Default
     private ArrayList<PaymentsDTO> payments =new ArrayList<>();
 
 }
+

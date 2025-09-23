@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,4 +21,5 @@ public class StudentTM extends ActionEvent {
     private String address;
     private Date dob;
     private Date registrationDate;
+    private String courses;
 }
