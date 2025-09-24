@@ -22,6 +22,7 @@ public class DashbordController {
     public Button btnLesson;
     public ImageView logoImageView;
     public HBox headerHBox;
+    public AnchorPane ancDashboard1;
 
 //    private AnchorPane ancDashboard;
 
@@ -55,21 +56,40 @@ public class DashbordController {
             e.printStackTrace();
         }
     }
-    public void initialize() {
-        ImageView car = new ImageView(new Image(getClass().getResource("/images/image.png").toExternalForm()));
-        car.setFitWidth(500);
-        car.setFitHeight(500);
-        car.setLayoutY(380); // vertical position
+    void navigateTo2(String path) {
+        try {
+            ancDashboard1.getChildren().clear();
 
-        ancDashboard.getChildren().add(car);
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource(path));
 
-        TranslateTransition drive = new TranslateTransition(Duration.seconds(5), car);
-        drive.setFromX(-300);
-        drive.setToX(ancDashboard.getPrefWidth());
-        drive.setCycleCount(TranslateTransition.INDEFINITE);
-        drive.setAutoReverse(true);
-        drive.play();
+            anchorPane.prefWidthProperty().bind(ancDashboard1.widthProperty());
+            anchorPane.prefHeightProperty().bind(ancDashboard1.heightProperty());
+
+            ancDashboard1.getChildren().add(anchorPane);
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            e.printStackTrace();
+        }
     }
+
+    public void initialize() {
+
+        ImageView myc = new ImageView(new Image(getClass().getResource("/images/image.png").toExternalForm()));
+        myc.setFitWidth(500);
+        myc.setFitHeight(500);
+        myc.setLayoutY(400); // vertical position
+
+        ancDashboard.getChildren().add(myc);
+
+        TranslateTransition driv = new TranslateTransition(Duration.seconds(5),myc );
+        driv.setFromX(-200);
+        driv.setToX(ancDashboard.getPrefWidth());
+        driv.setCycleCount(TranslateTransition.INDEFINITE);
+        driv.setAutoReverse(true);
+        driv.play();
+    }
+
 
     public void btnCourseOnAction(ActionEvent actionEvent) {
 
@@ -90,6 +110,10 @@ public class DashbordController {
     }
 
     public void onClick(MouseEvent mouseEvent) {
-        navigateTo("/view/Dashbord.fxml");
+        navigateTo2("/view/Dashbord.fxml");
+    }
+
+    public void onClickedHome(MouseEvent mouseEvent) {
+        navigateTo2("/view/Dashbord.fxml");
     }
 }

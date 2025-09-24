@@ -1,5 +1,6 @@
 package com.example.orm_elite_driving_school_system.controller;
 
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -20,6 +23,7 @@ import com.example.orm_elite_driving_school_system.bo.custom.StudentsBO;
 import com.example.orm_elite_driving_school_system.dto.CourseDTO;
 import com.example.orm_elite_driving_school_system.dto.StudentsDTO;
 import com.example.orm_elite_driving_school_system.dto.tm.StudentTM;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -55,6 +59,34 @@ public class StudentManagePageController implements Initializable {
         colEnrolledCourses.setCellValueFactory(new PropertyValueFactory<>("courseId"));
 
         loadAllStudents();
+
+//        ImageView car = new ImageView(new Image(getClass().getResource("/images/image.png").toExternalForm()));
+//        car.setFitWidth(150);
+//        car.setFitHeight(150);
+//        car.setLayoutY(-120); // vertical position
+//
+//        ancDashboard.getChildren().add(car);
+//
+//        TranslateTransition drive = new TranslateTransition(Duration.seconds(5), car);
+//        drive.setFromX(90);
+//        drive.setToX(ancDashboard.getPrefWidth());
+//        drive.setCycleCount(TranslateTransition.INDEFINITE);
+//        drive.setAutoReverse(true);
+//        drive.play();
+//
+//        ImageView my = new ImageView(new Image(getClass().getResource("/images/image.png").toExternalForm()));
+//        my.setFitWidth(150);
+//        my.setFitHeight(150);
+//        my.setLayoutY(-120); // vertical position
+//
+//        ancDashboard.getChildren().add(my);
+//
+//        TranslateTransition drives = new TranslateTransition(Duration.seconds(5), car);
+//        drives.setFromX(90);
+//        drives.setToX(ancDashboard.getPrefWidth());
+//        drives.setCycleCount(TranslateTransition.INDEFINITE);
+//        drives.setAutoReverse(true);
+//        drives.play();
     }
 
     private StudentTM toStudentTM(StudentsDTO dto) {

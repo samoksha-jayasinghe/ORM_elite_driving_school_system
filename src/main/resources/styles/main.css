@@ -1,0 +1,94 @@
+/* --- Dashboard Header --- */
+.dashboard-header {
+    -fx-background-color: transparent;
+}
+
+.welcome-text {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.sub-header-text {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-text-fill: #666666;
+    -fx-opacity: 0.8;
+}
+
+/* --- Stats Cards --- */
+.stats-container {
+    -fx-padding: 10px;
+}
+
+.stat-card {
+    -fx-background-color: #f7f7ff;
+    -fx-background-radius: 15px;
+    -fx-border-color: #e0c3fc;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    -fx-background-color: #e0c3fc;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.stat-value {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6a1b9a;
+}
+
+.stat-label {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+    -fx-opacity: 0.7;
+}
+
+/* --- Recent Activities Section --- */
+.section-title {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.recent-list-view {
+    -fx-background-color: #f7f7ff;
+    -fx-background-radius: 15px;
+    -fx-border-color: #e0c3fc;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-padding: 10px 15px;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-cursor: hand;
+}
+
+/* --- Custom Animations --- */
+.dashboard-header,
+.stats-container,
+.section-title,
+.recent-list-view {
+    -fx-opacity: 0;
+    -fx-translate-y: 20px;
+    -fx-transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
