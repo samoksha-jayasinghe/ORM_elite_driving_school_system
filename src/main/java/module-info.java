@@ -10,7 +10,8 @@ module com.example.orm_elite_driving_school_system {    requires javafx.controls
     requires jbcrypt;
     requires java.naming;
     requires javafx.base;
-
+    requires batik.awt.util;
+    requires jdk.javadoc;
 
 
     opens com.example.orm_elite_driving_school_system to javafx.fxml;

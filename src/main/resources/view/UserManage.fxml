@@ -41,6 +41,11 @@
                         <Insets bottom="5.0" left="37.0" right="5.0" top="24.0" />
                     </HBox.margin>
                 </Button>
+                <Button mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #C8A2C8;" text="Delete User">
+                    <HBox.margin>
+                        <Insets bottom="3.0" left="31.0" right="5.0" top="24.0" />
+                    </HBox.margin>
+                </Button>
             </children>
         </HBox>
         <VBox layoutX="11.2" layoutY="140.0" prefHeight="556.0" prefWidth="1178.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="140.0">
@@ -65,14 +70,6 @@
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="8.0" />
             </padding></VBox>
-        <HBox layoutX="10.0" layoutY="718.0" prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <children>
-                <Button mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #C8A2C8;" text="Delete User">
-                    <HBox.margin>
-                        <Insets bottom="3.0" left="37.0" right="5.0" top="-37.0" />
-                    </HBox.margin>
-                </Button>
-            </children>
-        </HBox>
+        <HBox layoutX="10.0" layoutY="718.0" prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     </children>
 </AnchorPane>

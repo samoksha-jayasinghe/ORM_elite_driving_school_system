@@ -83,9 +83,9 @@
         <AnchorPane layoutX="316.0" prefHeight="800.0" prefWidth="884.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <!-- Animated Header -->
-                <HBox fx:id="headerHBox" layoutX="11.2" layoutY="32.0" prefHeight="124.0" prefWidth="862.0" styleClass="header" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="15.0">
+                <HBox fx:id="headerHBox" layoutX="11.2" layoutY="32.0" prefHeight="124.0" prefWidth="862.0" styleClass="header" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                  <StackPane prefHeight="124.0" prefWidth="82.0">
                      <children>
                         <ImageView fitHeight="72.0" fitWidth="64.0" onMouseClicked="#onClickedHome" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -94,7 +94,7 @@
                         </ImageView>
                      </children>
                      <HBox.margin>
-                        <Insets left="666.0" />
+                        <Insets left="1100.0" right="1.0" />
                      </HBox.margin>
                   </StackPane>
                </children></HBox>

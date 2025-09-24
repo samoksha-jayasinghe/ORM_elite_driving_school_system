@@ -78,7 +78,7 @@ public class DashbordController {
         ImageView myc = new ImageView(new Image(getClass().getResource("/images/image.png").toExternalForm()));
         myc.setFitWidth(500);
         myc.setFitHeight(500);
-        myc.setLayoutY(400); // vertical position
+        myc.setLayoutY(380); // vertical position
 
         ancDashboard.getChildren().add(myc);
 

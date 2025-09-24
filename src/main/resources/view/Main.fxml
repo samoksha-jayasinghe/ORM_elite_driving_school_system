@@ -9,10 +9,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="800.0" prefWidth="1508.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm_elite_driving_school_system.controller.StartPageController">
+<AnchorPane prefHeight="800.0" prefWidth="1508.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm_elite_driving_school_system.controller.Main">
    <children>
       <AnchorPane fx:id="startPagePane1" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to bottom left, #C8A2C8, #FFFFFF);" styleClass="root" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="754.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <stylesheets>
@@ -26,21 +28,34 @@
           </stylesheets>
       </AnchorPane>
       <StackPane />
-        <VBox alignment="CENTER" prefHeight="542.0" prefWidth="537.0" spacing="20.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="200.0">
+        <VBox fx:id="anc" alignment="CENTER" prefHeight="542.0" prefWidth="537.0" spacing="20.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="200.0">
             <children>
-                <ImageView fx:id="logoImageView" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
+                <ImageView fx:id="logoImageView" fitHeight="117.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
                     <image>
                         <Image url="@../images/8255684dfa031faa06e8ece1c1e7c902-removebg-preview.png" />
                     </image>
-               <VBox.margin>
-                  <Insets bottom="-11.0" top="2.0" />
-               </VBox.margin>
                 </ImageView>
 
-                                        <Label fx:id="welcomeLabel" alignment="CENTER" text="Welcome to Elite Driving School!" textFill="WHITE">
+                                        <Label fx:id="welcomeLabel" alignment="CENTER" text="Welcome to Elite Driving School!">
                     <font>
                         <Font name="Segoe UI Bold" size="24.0" />
                     </font>
+               <textFill>
+                  <LinearGradient cycleMethod="REPEAT" endX="0.6022727995207815" endY="0.3522726992766062" startY="0.14772725827766187">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5163857936859131" green="0.31349998712539673" blue="0.550000011920929" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
                 </Label>
 
                                         <Label fx:id="descriptionLabel" alignment="CENTER" styleClass="description-text" text="Your journey to confident driving starts here.">
@@ -49,16 +64,21 @@
                     </VBox.margin>
                 </Label>
 
-                                        <Button fx:id="getStartedButton" mnemonicParsing="false" onAction="#handleGetStarted" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #C8A2C8;" styleClass="get-started-button" text="Get Started">
+                                        <Button fx:id="getStartedButton" mnemonicParsing="false" onAction="#btnstarted" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #C8A2C8;" styleClass="get-started-button" text="Get Started">
                     <VBox.margin>
                         <Insets top="20.0" />
                     </VBox.margin>
                 </Button>
             </children>
         </VBox>
-      <ImageView fitHeight="298.0" fitWidth="642.0" layoutX="563.2" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 70%;" AnchorPane.bottomAnchor="502.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="866.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="298.0" fitWidth="642.0" layoutX="563.2" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 70%;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="866.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="507.0">
          <image>
             <Image url="@../images/a-cartoon-race-car-is-shown-in-black-and-white-vector-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="298.0" fitWidth="642.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 70%;" AnchorPane.topAnchor="29.0">
+         <image>
+            <Image url="@../images/car%20race.png" />
          </image>
       </ImageView>
    </children>
