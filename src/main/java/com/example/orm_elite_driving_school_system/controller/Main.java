@@ -14,6 +14,7 @@ public class Main {
 
     private Stage stage;
     private Scene scene;
+
     private Parent root;
 
     // Method connected to getStartedButton
