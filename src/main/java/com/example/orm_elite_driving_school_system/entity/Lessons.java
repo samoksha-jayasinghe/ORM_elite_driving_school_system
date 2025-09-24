@@ -35,10 +35,10 @@ public class Lessons {
     private Date lessonDate;
 
     @Column
-    private Time startTime;
+    private String startTime;
 
     @Column
-    private Time endTime;
+    private String endTime;
 
     @Column
     private String status;

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to bottom right, #e0c3fc, #ffffff);;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm_elite_driving_school_system.controller.UserManagePageController">
+<AnchorPane prefHeight="738.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to bottom right, #e0c3fc, #ffffff);;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm_elite_driving_school_system.controller.UserManagePageController">
     <children>
         <HBox layoutX="57.0" prefHeight="66.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -43,7 +43,7 @@
                 </Button>
             </children>
         </HBox>
-        <VBox layoutX="8.0" layoutY="140.0" prefHeight="578.0" prefWidth="1179.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="140.0">
+        <VBox layoutX="11.2" layoutY="140.0" prefHeight="556.0" prefWidth="1178.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="140.0">
             <children>
                 <TableView fx:id="tblUser" onMouseClicked="#onClickTable" prefHeight="662.0" prefWidth="1149.0" stylesheets="@../styles/Table.css">
                     <columns>
@@ -63,13 +63,13 @@
                 </TableView>
             </children>
             <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                <Insets bottom="20.0" left="20.0" right="20.0" top="8.0" />
             </padding></VBox>
         <HBox layoutX="10.0" layoutY="718.0" prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
                 <Button mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #C8A2C8;" text="Delete User">
                     <HBox.margin>
-                        <Insets bottom="3.0" left="37.0" right="5.0" top="-8.0" />
+                        <Insets bottom="3.0" left="37.0" right="5.0" top="-37.0" />
                     </HBox.margin>
                 </Button>
             </children>

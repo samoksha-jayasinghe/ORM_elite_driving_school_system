@@ -38,7 +38,7 @@
                             </HBox.margin>
                             <children>
                                 <Label prefHeight="18.0" prefWidth="55.0" text="Amount" />
-                                <TextField fx:id="txtAmount" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" />
+                                <Label fx:id="lblAmount" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" />
                             </children>
                         </VBox>
                     </children>
@@ -86,7 +86,7 @@
                             </HBox.margin>
                             <children>
                                 <Label prefHeight="18.0" prefWidth="55.0" text="Student Id" />
-                                <TextField fx:id="txtStudentId" prefWidth="358.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" />
+                        <ComboBox fx:id="cmbStudentId" prefHeight="26.0" prefWidth="336.0" style="-fx-border-radius: 15px; -fx-background-radius: 15px;" />
                             </children>
                         </VBox>
                     </children>

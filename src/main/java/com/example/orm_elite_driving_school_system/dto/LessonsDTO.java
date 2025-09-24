@@ -17,8 +17,8 @@ public class LessonsDTO {
     private String course_id;
     private String instructor_id;
     private Date lessonDate;
-    private Time startTime;
-    private Time endTime;
+    private String startTime;
+    private String endTime;
     private String status;
 
 }

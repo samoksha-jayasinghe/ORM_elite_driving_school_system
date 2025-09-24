@@ -53,37 +53,7 @@ public class LessonsManagePageController implements Initializable {
         }
     }
 
-    public void btnDeleteOnAAction(ActionEvent actionEvent) {
-        Alert alert = new Alert(
-                Alert.AlertType.CONFIRMATION,
-                "Are you sure whether you want to delete this lesson?",
-                ButtonType.YES,
-                ButtonType.NO
-        );
-        alert.setTitle("Delete Lessons");
 
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if (result.isPresent() && result.get() == ButtonType.YES) {
-            LessonsTM selectedItem = tblLessons.getSelectionModel().getSelectedItem();
-            if (selectedItem == null) {
-                new Alert(Alert.AlertType.WARNING, "Please select a lesson to delete!").show();
-                return;
-            }
-
-            try {
-                boolean isDeleted = lessonsBO.deleteLessons(selectedItem.getLesson_id());
-                if (isDeleted) {
-                    new Alert(Alert.AlertType.INFORMATION, "Lesson deleted successfully!").show();
-                    loadAllLessons();
-                } else {
-                    new Alert(Alert.AlertType.ERROR, "Failed to delete the lessons!").show();
-                }
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
     public void onClickTable(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2) {
             LessonsTM selectedItem = tblLessons.getSelectionModel().getSelectedItem();
@@ -116,9 +86,9 @@ public class LessonsManagePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colId.setCellValueFactory(new PropertyValueFactory<>("lesson_id"));
-        colLessonDate.setCellValueFactory(new PropertyValueFactory<>("lesson_date"));
-        colStartTime.setCellValueFactory(new PropertyValueFactory<>("start_time"));
-        colEndTime.setCellValueFactory(new PropertyValueFactory<>("end_time"));
+        colLessonDate.setCellValueFactory(new PropertyValueFactory<>("lessonDate"));
+        colStartTime.setCellValueFactory(new PropertyValueFactory<>("startTime"));
+        colEndTime.setCellValueFactory(new PropertyValueFactory<>("endTime"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         colStudentId.setCellValueFactory(new PropertyValueFactory<>("student_id"));
         colCourseId.setCellValueFactory(new PropertyValueFactory<>("course_id"));
@@ -146,6 +116,38 @@ public class LessonsManagePageController implements Initializable {
             ));
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
+        Alert alert = new Alert(
+                Alert.AlertType.CONFIRMATION,
+                "Are you sure whether you want to delete this lesson?",
+                ButtonType.YES,
+                ButtonType.NO
+        );
+        alert.setTitle("Delete Lessons");
+
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            LessonsTM selectedItem = tblLessons.getSelectionModel().getSelectedItem();
+            if (selectedItem == null) {
+                new Alert(Alert.AlertType.WARNING, "Please select a lesson to delete!").show();
+                return;
+            }
+
+            try {
+                boolean isDeleted = lessonsBO.deleteLessons(selectedItem.getLesson_id());
+                if (isDeleted) {
+                    new Alert(Alert.AlertType.INFORMATION, "Lesson deleted successfully!").show();
+                    loadAllLessons();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Failed to delete the lessons!").show();
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

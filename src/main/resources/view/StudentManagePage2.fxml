@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to bottom right, #e0c3fc, #ffffff);;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm_elite_driving_school_system.controller.StudentManagePageController">
+<AnchorPane prefHeight="742.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to bottom right, #e0c3fc, #ffffff);;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm_elite_driving_school_system.controller.StudentManagePageController">
     <children>
         <HBox layoutX="57.0" prefHeight="66.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -36,7 +36,7 @@
         </HBox>
         <HBox layoutY="85.0" prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #fff;" text="Add Student">
+                <Button mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #C8A2C8;" text="Add Student">
                     <HBox.margin>
                         <Insets bottom="5.0" left="37.0" right="5.0" top="24.0" />
                     </HBox.margin>
@@ -67,9 +67,9 @@
             </padding></VBox>
         <HBox layoutX="10.0" layoutY="718.0" prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #fff;" text="Delete Student">
+                <Button mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #C8A2C8;" text="Delete Student">
                     <HBox.margin>
-                        <Insets bottom="3.0" left="37.0" right="5.0" top="-8.0" />
+                        <Insets bottom="3.0" left="37.0" right="5.0" top="-36.0" />
                     </HBox.margin>
                 </Button>
             </children>

@@ -37,12 +37,12 @@ public class PaymentManageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colPaymentId.setCellValueFactory(new PropertyValueFactory<>("payment_id"));
-        colPaymentDate.setCellValueFactory(new PropertyValueFactory<>("payment_date"));
+        colPaymentId.setCellValueFactory(new PropertyValueFactory<>("paymentId"));
+        colPaymentDate.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
         colAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        colPaymentMethod.setCellValueFactory(new PropertyValueFactory<>("payment_method"));
+        colPaymentMethod.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-        colStudentId.setCellValueFactory(new PropertyValueFactory<>("student_id"));
+        colStudentId.setCellValueFactory(new PropertyValueFactory<>("studentId"));
         
         try {
             loadAllPayments();
@@ -53,7 +53,20 @@ public class PaymentManageController implements Initializable {
     }
 
     private void loadAllPayments() {
-
+        try {
+            tblPayment.setItems(FXCollections.observableArrayList(
+                    paymentsBO.getAllPayments().stream().map(dto -> new PaymentTM(
+                            dto.getPaymentId(),
+                            dto.getPaymentDate(),
+                            dto.getAmount(),
+                            dto.getPaymentMethod(),
+                            dto.getStatus(),
+                            dto.getStudentId()
+                    )).toList()
+            ));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
@@ -66,42 +79,12 @@ public class PaymentManageController implements Initializable {
             stage.setScene(new Scene(parent));
             stage.initModality(Modality.APPLICATION_MODAL); // Block input to other windows
             stage.showAndWait();
+            loadAllPayments();
         } catch (IOException e) {
             new Alert(Alert.AlertType.ERROR, "Failed to open the popup!").show();
         }
     }
 
-    public void btnDeleteOnAAction(ActionEvent actionEvent) {
-        Alert alert = new Alert(
-                Alert.AlertType.CONFIRMATION,
-                "Are you sure whether you want to delete this payment?",
-                ButtonType.YES,
-                ButtonType.NO
-        );
-        alert.setTitle("Delete Payment");
-
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if (result.isPresent() && result.get() == ButtonType.YES) {
-            PaymentTM selectedItem = tblPayment.getSelectionModel().getSelectedItem();
-            if (selectedItem == null) {
-                new Alert(Alert.AlertType.WARNING, "Please select a payment to delete!").show();
-                return;
-            }
-
-            try {
-                boolean isDeleted = paymentsBO.deletePayments(selectedItem.getPaymentId());
-                if (isDeleted) {
-                    new Alert(Alert.AlertType.INFORMATION, "Payment deleted successfully!").show();
-                    loadAllPayments();
-                } else {
-                    new Alert(Alert.AlertType.ERROR, "Failed to delete the payment!").show();
-                }
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
 
     public void onClickTable(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2) {
@@ -133,5 +116,34 @@ public class PaymentManageController implements Initializable {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
+        Alert alert = new Alert(
+                Alert.AlertType.CONFIRMATION,
+                "Are you sure whether you want to delete this payment?",
+                ButtonType.YES,
+                ButtonType.NO
+        );
+        alert.setTitle("Delete Payment");
+
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            PaymentTM selectedItem = tblPayment.getSelectionModel().getSelectedItem();
+            if (selectedItem == null) {
+                new Alert(Alert.AlertType.WARNING, "Please select a payment to delete!").show();
+                return;
+            }
+
+            try {
+                boolean isDeleted = paymentsBO.deletePayments(selectedItem.getPaymentId());
+                if (isDeleted) {
+                    new Alert(Alert.AlertType.INFORMATION, "Payment deleted successfully!").show();
+                    loadAllPayments();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Failed to delete the payment!").show();
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

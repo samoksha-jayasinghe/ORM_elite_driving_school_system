@@ -59,11 +59,11 @@ public class LessonsPopUpController implements Initializable {
             SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 
             Date lessonDate = dateFormat.parse(lessonDateStr);
-            Date startTime = timeFormat.parse(startTimeStr);
-            Date endTime = timeFormat.parse(endTimeStr);
+
+
 
             boolean isSaved = lessonsBO.saveLessons(new LessonsDTO(
-                    lessonId, studentId, courseId, instructorId, lessonDate, (Time) startTime, (Time) endTime, status
+                    lessonId, studentId, courseId, instructorId, lessonDate, startTimeStr, endTimeStr, status
             ));
             if (isSaved) {
                 new Alert(Alert.AlertType.INFORMATION, "Lesson saved successfully!").show();
@@ -100,7 +100,7 @@ public class LessonsPopUpController implements Initializable {
             Date endTime = timeFormat.parse(endTimeStr);
 
             boolean isUpdated = lessonsBO.updateLessons(new LessonsDTO(
-                    lessonId, studentId, courseId, instructorId, lessonDate, (Time) startTime, (Time) endTime, status
+                    lessonId, studentId, courseId, instructorId, lessonDate, startTimeStr, endTimeStr , status
             ));
             if (isUpdated) {
                 new Alert(Alert.AlertType.INFORMATION, "Lesson updated successfully!").show();
@@ -119,8 +119,8 @@ public class LessonsPopUpController implements Initializable {
         try {
             lblLessonId.setText(lessonsBO.generateNewLessonId());
             cmbStudentId.setItems(FXCollections.observableArrayList(studentBO.getAllStudentIds()));
-            cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourses()));
-            cmbInstructorId.setItems(FXCollections.observableArrayList(instructorsBO.getAllInstructors()));
+            cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourseIds()));
+            cmbInstructorId.setItems(FXCollections.observableArrayList(instructorsBO.getAllInstructorIds()));
         }catch (Exception e){
             throw new RuntimeException(e);
         }
