@@ -80,4 +80,10 @@ public class UserBOImpl implements UserBO {
     public String generateNextUserId() {
         return userDAO.generateNewId();
     }
+
+    @Override
+    public UserDTO getUserByUsername(String inputUsername) {
+        User user = userDAO.getUserByUsername(inputUsername);
+        return converter.getUserDTO(user);
+    }
 }

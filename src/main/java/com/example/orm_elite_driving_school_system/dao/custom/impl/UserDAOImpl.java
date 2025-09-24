@@ -134,5 +134,16 @@ public class UserDAOImpl implements UserDAO {
             return String.format("U-%03d", num);
         }
     }
+    @Override
+    public User getUserByUsername(String userName) {
+        Session session = factoryConfiguration.getSession();
+        try {
+            Query<User> query = session.createQuery("FROM User u WHERE u.userName = :userName", User.class);
+            query.setParameter("userName", userName);
+            return query.uniqueResult();
+        } finally {
+            session.close();
+        }
+    }
 
 }

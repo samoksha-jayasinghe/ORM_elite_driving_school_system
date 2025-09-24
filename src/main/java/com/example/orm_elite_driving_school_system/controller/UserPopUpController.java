@@ -69,9 +69,9 @@ public class UserPopUpController implements Initializable {
             boolean isSaved = userBO.saveUsers(new UserDTO(
                     userId,
                     username,
-                    email,
                     encryptedPassword,
                     role,
+                    email,
                     status
             ));
             if (isSaved) {
@@ -80,6 +80,8 @@ public class UserPopUpController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Failed to save user!").show();
             }
         } catch (Exception e) {
+            e.printStackTrace();
+
             new Alert(Alert.AlertType.ERROR, "Error: " + e.getMessage()).show();
         }
     }
@@ -112,9 +114,9 @@ public class UserPopUpController implements Initializable {
             boolean isUpdated = userBO.updateUsers(new UserDTO(
                     userId,
                     username,
-                    email,
                     encryptedPassword,
                     role,
+                    email,
                     status
             ));
             if (isUpdated) {
@@ -123,6 +125,8 @@ public class UserPopUpController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Failed to update user!").show();
             }
         } catch (Exception e) {
+            e.printStackTrace();
+
             new Alert(Alert.AlertType.ERROR, "Error: " + e.getMessage()).show();
         }
     }

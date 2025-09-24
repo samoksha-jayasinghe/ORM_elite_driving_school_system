@@ -128,7 +128,7 @@ public class UserManagePageController implements Initializable {
             }
 
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfaces/view/AddUserPopUp.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/AddUserPopUp.fxml"));
                 Parent parent = fxmlLoader.load();
 
                 // Get popup controller and send data

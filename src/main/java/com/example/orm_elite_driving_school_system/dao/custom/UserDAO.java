@@ -5,4 +5,5 @@ import com.example.orm_elite_driving_school_system.entity.User;
 
 
 public interface UserDAO extends CrudDAO<User> {
+    User getUserByUsername(String inputUsername);
 }
