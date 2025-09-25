@@ -24,7 +24,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class CourseManageController implements Initializable {
+public class   CourseManageController implements Initializable {
 
     public TableView<CourseTM> tblCourse;
     public TableColumn<CourseTM, String> colCourseId;
