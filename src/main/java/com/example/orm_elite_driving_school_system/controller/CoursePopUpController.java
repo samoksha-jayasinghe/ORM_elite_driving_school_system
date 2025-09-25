@@ -1,10 +1,15 @@
 package com.example.orm_elite_driving_school_system.controller;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 import com.example.orm_elite_driving_school_system.bo.BOFactory;
 import com.example.orm_elite_driving_school_system.bo.BOTypes;
 import com.example.orm_elite_driving_school_system.bo.custom.CourseBO;
@@ -25,6 +30,8 @@ public class CoursePopUpController implements Initializable {
     public Button btnSave;
     public Button btnUpdate;
     public Label lblCourseId;
+    @FXML
+    private AnchorPane rootPane;
 
     private final CourseBO courseBO = (CourseBO) BOFactory.getInstance().getBO(BOTypes.COURSE);
     private final InstructorsBO instructorsBO = (InstructorsBO)  BOFactory.getInstance().getBO(BOTypes.INSTRUCTORS);
@@ -85,7 +92,26 @@ public class CoursePopUpController implements Initializable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        playIntroAnimation();
+    }
 
+    private void playIntroAnimation() {
+        if (rootPane == null) return;
+
+        rootPane.setOpacity(0);
+        rootPane.setTranslateY(-10);
+
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(350), rootPane);
+        fadeTransition.setFromValue(0);
+        fadeTransition.setToValue(1);
+
+        TranslateTransition slideTransition = new TranslateTransition(Duration.millis(350), rootPane);
+        slideTransition.setFromY(-10);
+        slideTransition.setToY(0);
+        slideTransition.setInterpolator(Interpolator.EASE_OUT);
+
+        fadeTransition.play();
+        slideTransition.play();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
